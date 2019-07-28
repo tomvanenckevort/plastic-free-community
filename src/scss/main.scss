@@ -1,0 +1,58 @@
+$govuk-page-width: 1100px !default;
+
+@import 'govuk-frontend/settings/assets';
+
+@import 'govuk-frontend/settings/compatibility';
+@import 'govuk-frontend/settings/global-styles';
+@import 'govuk-frontend/settings/ie8';
+
+@import 'govuk-frontend/settings/media-queries';
+
+@import 'govuk-frontend/settings/colours-palette';
+
+$govuk-colours: map-merge(
+    $govuk-colours,
+    (
+        'purple': #9e1f86,
+        'light-blue': #0098cc,
+        'blue': #007faa
+    )
+);
+
+@import 'govuk-frontend/settings/colours-organisations';
+@import 'govuk-frontend/settings/colours-applied';
+
+$govuk-link-visited-colour: govuk-colour('blue');
+
+@import 'govuk-frontend/settings/spacing';
+@import 'govuk-frontend/settings/measurements';
+
+@import 'govuk-frontend/settings/typography-font-families';
+
+@import 'settings/fonts';
+
+$govuk-font-family-nta: 'Roboto Condensed', Arial, sans-serif;
+
+@import 'govuk-frontend/settings/typography-font';
+@import 'govuk-frontend/settings/typography-responsive';
+
+@import 'govuk-frontend/tools/all';
+@import 'govuk-frontend/helpers/all';
+
+@import 'govuk-frontend/core/all';
+@import 'govuk-frontend/objects/all';
+
+@import 'govuk-frontend/components/all';
+
+@import 'govuk-frontend/utilities/all';
+@import 'govuk-frontend/overrides/all';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/navigation';
+@import 'components/mobile-navigation';
+@import 'components/masthead';
+@import 'components/site-search';
+@import 'components/social-feed';
+
+@import 'overrides/typography';

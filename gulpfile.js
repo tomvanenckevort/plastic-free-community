@@ -1,6 +1,8 @@
 const { src, dest, parallel, series, watch } = require('gulp');
 const del = require('del');
-const tap = require('gulp-tap');
+const nunjucks = require('gulp-nunjucks');
+const njk = require('nunjucks');
+const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const minify = require('gulp-csso');
 const rollup = require('gulp-better-rollup');
@@ -8,14 +10,30 @@ const babel = require('rollup-plugin-babel');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
 const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
+const merge = require('merge-stream');
+const express = require('express');
+const directory = require('serve-index');
 
 function clean() {
-    return del(['dist/**/*', '../PlasticFreeCommunity.Web/assets/**/*'], { force: true });
+    return del(['dist/**/*', 'PlasticFreeCommunity.Web/assets/**/*'], { force: true });
+}
+
+function html() {
+    return src(['src/templates/**/*.njk', '!src/templates/**/_*.njk'])
+        .pipe(
+            nunjucks.compile(
+                {},
+                {
+                    env: new njk.Environment([new njk.FileSystemLoader('node_modules/govuk-frontend'), new njk.FileSystemLoader('src/templates')])
+                }
+            )
+        )
+        .pipe(rename({ extname: '.html' }))
+        .pipe(dest('dist'));
 }
 
 function css() {
-    return src('src/scss/*/*.scss', { sourcemaps: true })
+    return src('src/scss/*.scss', { sourcemaps: true })
         .pipe(
             sass({
                 includePaths: ['node_modules'],
@@ -23,55 +41,69 @@ function css() {
             })
         )
         .pipe(minify())
-        .pipe(dest('dist/css', { sourcemaps: '.' }));
+        .pipe(dest('dist/assets/css', { sourcemaps: '.' }));
 }
 
 function js() {
-    return src('src/js/*/').pipe(
-        tap(function(folder) {
-            return src(folder.path + '/*.js', { sourcemaps: true })
-                .pipe(
-                    rollup(
-                        {
-                            plugins: [
-                                resolve({
-                                    jsnext: true,
-                                    main: true,
-                                    browser: true
-                                }),
-                                commonjs(),
-                                babel({
-                                    presets: ['@babel/preset-env'],
-                                    minified: true
-                                })
-                            ],
-                            external: []
-                        },
-                        {
-                            format: 'iife',
-                            globals: {}
-                        }
-                    )
-                )
-                .pipe(uglify())
-                .pipe(concat(folder.relative + '/' + folder.relative + '.js'))
-                .pipe(dest('dist/js', { sourcemaps: '.' }));
-        })
-    );
+    return src('src/js/*.js', { sourcemaps: true })
+        .pipe(
+            rollup(
+                {
+                    plugins: [
+                        resolve({
+                            mainFields: ['module', 'main', 'jsnext'],
+                            browser: true
+                        }),
+                        commonjs(),
+                        babel({
+                            presets: ['@babel/preset-env'],
+                            minified: true
+                        })
+                    ],
+                    external: []
+                },
+                {
+                    format: 'iife',
+                    globals: {}
+                }
+            )
+        )
+        .pipe(uglify())
+        .pipe(dest('dist/assets/js', { sourcemaps: '.' }));
+}
+
+function assets() {
+    return merge(src('src/images/**/*').pipe(dest('dist/assets/images')), src('src/fonts/**/*').pipe(dest('dist/assets/fonts')));
 }
 
 function watching() {
-    watch(['src/templates/*/*.html', 'src/scss/*/*.scss', 'src/js/*/*.js'], series(clean, parallel(css, js), copy));
+    watch(['src/templates/**/*.njk', 'src/scss/**/*.scss', 'src/js/**/*.js', 'src/images/**/*', 'src/fonts/**/*'], series(clean, parallel(html, css, js, assets), copy));
 }
 
 function copy() {
-    return src('dist/**/*').pipe(dest('../PlasticFreeCommunity.Web/assets'));
+    return src('dist/assets/**/*').pipe(dest('PlasticFreeCommunity.Web/assets'));
+}
+
+function server(cb) {
+    var app = express();
+
+    app.use(directory('dist'));
+    app.use(express.static('dist'));
+
+    app.listen(3000, function() {
+        console.log('Express server started on http://localhost:3000');
+    });
+
+    cb();
 }
 
 exports.clean = clean;
+exports.html = html;
 exports.css = css;
 exports.js = js;
+exports.assets = assets;
 exports.watch = watching;
 exports.copy = copy;
+exports.server = server;
 
-exports.default = series(clean, parallel(css, js), copy, watching);
+exports.default = series(clean, parallel(html, css, js, assets), copy, server, watching);

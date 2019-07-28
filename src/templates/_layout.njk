@@ -1,0 +1,54 @@
+{% extends "template.njk" %}
+
+{% set assetPath = '/assets' %}
+{% set assetUrl = '/assets' %}
+
+{% block pageTitle %}Plastic Free Community -
+    {{pageTitle}}
+{% endblock %}
+
+{% block head %}
+    <meta name="og:title" content="{{title}}">
+    <meta name="description" content="{{description}}">
+    <meta name="og:description" content="{{description}}">
+    <link rel="canonical" href="{{canonical}}"/>
+
+    <link href="/assets/css/main.css" rel="stylesheet" media="all"/>
+{% endblock %}
+
+{% block headIcons %}
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/assets/images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#9e1f86">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+{% endblock %}
+
+{# We provide our own header, so blank the one provided by the template #}
+{% block header %}{% endblock %}
+
+{% block main %}
+    <div class="app-pane" id="top">
+        <div class="app-pane__header">
+            {% include "components/_header.njk" %}
+        </div>
+        <div class="app-pane__nav">
+            {% include "components/_navigation.njk" %}
+            {% include "components/_mobile-navigation.njk" %}
+        </div>
+        <div class="app-pane__content">
+            {% block content %}{% endblock %}
+
+            {% include "components/_footer.njk" %}
+        </div>
+    </div>
+{% endblock %}
+
+{# We provide our own footer, so blank the one provided by the template #}
+{% block footer %}{% endblock %}
+
+{% block bodyEnd %}
+    <script src="/assets/js/main.js"></script>
+{% endblock %}

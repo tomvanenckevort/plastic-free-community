@@ -1,0 +1,44 @@
+{% extends "_layout.njk" %}
+{% set pageTitle = "Home" %}
+
+{% block content %}
+    {% include "components/_masthead.njk" %}
+    <div class="govuk-width-container app-site-width-container">
+        <div class="govuk-main-wrapper govuk-main-wrapper--l">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
+                    <h2 class="govuk-heading-l govuk-!-font-weight-bold govuk-!-color-purple">Reduce</h2>
+                    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non posuere turpis dignissim egestas.</p>
+                    <p class="govuk-body govuk-!-margin-bottom-0">
+                        <a href="#" class="govuk-link govuk-!-font-weight-bold">Find out more</a>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
+                    <h2 class="govuk-heading-l govuk-!-font-weight-bold govuk-!-color-purple">Reuse</h2>
+                    <p class="govuk-body">Donec rhoncus dolor in diam mattis sollicitudin. Morbi sapien urna, aliquet id nisi nec, dignissim egestas massa.</p>
+                    <p class="govuk-body govuk-!-margin-bottom-0">
+                        <a href="#" class="govuk-link govuk-!-font-weight-bold">Find out more</a>
+                    </p>
+                </div>
+                <div class="govuk-grid-column-one-third govuk-!-margin-bottom-8">
+                    <h2 class="govuk-heading-l govuk-!-font-weight-bold govuk-!-color-purple">Recycle</h2>
+                    <p class="govuk-body">Donec arcu lectus, ultricies vitae lectus vitae, scelerisque ornare tortor. Phasellus condimentum ut risus et efficitur.</p>
+                    <p class="govuk-body govuk-!-margin-bottom-0">
+                        <a href="#" class="govuk-link govuk-!-font-weight-bold">Find out more</a>
+                    </p>
+                </div>
+
+                <div class="govuk-grid-column-full">
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl govuk-!-margin-top-0">
+                </div>
+
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-l">Follow us</h2>
+
+                    <div id="instafeed" data-user-id="8987997106" data-access-token="8987997106.924f677.8555ecbd52584f41b9b22ec1a16dafb9"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
