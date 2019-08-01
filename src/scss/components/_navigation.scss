@@ -3,13 +3,10 @@
     box-sizing: border-box;
     @include govuk-font(19, $weight: bold);
     width: 100%;
+    background-color: govuk-colour('grey-4');
 
     @include govuk-media-query($until: tablet) {
         display: none;
-    }
-
-    @include govuk-media-query($from: tablet) {
-        margin-left: -(govuk-spacing(3));
     }
 
     &__list {

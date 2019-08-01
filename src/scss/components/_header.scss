@@ -14,7 +14,7 @@
         width: 100%;
         border-bottom: 10px solid govuk-colour('purple');
         color: govuk-colour('black');
-        background: govuk-colour('white');
+        background: govuk-colour('grey-4');
         @include govuk-clearfix;
 
         @include govuk-media-query($from: desktop) {
@@ -102,14 +102,14 @@
         padding-left: 0;
         border: 1px solid transparent;
         color: govuk-colour('blue');
-        background-color: govuk-colour('white');
-        box-shadow: 0 0 0 govuk-colour('white');
+        background-color: govuk-colour('grey-4');
+        box-shadow: 0 0 0 govuk-colour('grey-4');
 
         &:active,
         &:focus,
         &:hover {
-            background-color: govuk-colour('white'); // Override the button default green
-            box-shadow: 0 0 0 govuk-colour('white'); // Override the button default green
+            background-color: govuk-colour('grey-4'); // Override the button default green
+            box-shadow: 0 0 0 govuk-colour('grey-4'); // Override the button default green
             color: govuk-colour('light-blue');
         }
 
