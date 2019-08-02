@@ -18,7 +18,7 @@ if ($instafeed) {
         accessToken: $instafeed.getAttribute('data-access-token'),
         resolution: 'standard_resolution',
         template:
-            '<div class="govuk-grid-column-one-quarter social-feed__item"><a href="{{link}}" target="_blank" id="{{id}}"><img class="social-feed__image" src="{{image}}" alt="{{caption}}" /></a></div>',
+            '<div class="govuk-grid-column-one-quarter social-feed__item"><a href="{{link}}" target="_blank" id="{{id}}"><div class="social-feed__image" title="{{caption}}" style="background-image: url(\'{{image}}\');"></div></a></div>',
         sortBy: 'most-recent',
         limit: 4,
         links: false
