@@ -56,8 +56,9 @@ function js() {
                         }),
                         commonjs(),
                         babel({
-                            presets: ['@babel/preset-env'],
-                            minified: true
+                            presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: '3' }]],
+                            minified: true,
+                            exclude: [/\/core-js\//]
                         })
                     ],
                     external: []

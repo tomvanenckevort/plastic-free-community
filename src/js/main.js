@@ -1,13 +1,8 @@
 import MobileNav from './components/mobile-navigation';
-import Search from './components/search.js';
 import Instafeed from 'instafeed.es6/lib/instafeed';
 
 // Initialise mobile navigation
 new MobileNav().init();
-
-// Initialise search
-var $searchContainer = document.querySelector('[data-module="app-search"]');
-new Search($searchContainer).init();
 
 // Initialise Instagram feed
 var $instafeed = document.querySelector('#instafeed');
