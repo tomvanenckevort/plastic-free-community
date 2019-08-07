@@ -1,4 +1,7 @@
+import common from 'govuk-frontend/common';
+import Button from 'govuk-frontend/components/button/button';
 import MobileNav from './components/mobile-navigation';
+import FormValidation from './components/form-validation';
 import Instafeed from 'instafeed.es6/lib/instafeed';
 
 // Initialise mobile navigation
@@ -19,3 +22,12 @@ if ($instafeed) {
         links: false
     }).run();
 }
+
+// Initialise buttons
+var $buttons = document.querySelectorAll('[data-module="govuk-button"]');
+common.nodeListForEach($buttons, function($button) {
+    new Button($button).init();
+});
+
+// Initialise form validation
+new FormValidation().init();

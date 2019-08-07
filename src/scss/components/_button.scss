@@ -1,0 +1,37 @@
+$govuk-primary-button-colour: govuk-colour('blue');
+$govuk-primary-button-hover-colour: govuk-shade($govuk-primary-button-colour, 10%);
+$govuk-primary-button-shadow-colour: govuk-shade($govuk-primary-button-colour, 40%);
+$govuk-primary-button-text-colour: govuk-colour('white');
+
+.govuk-button--primary {
+    background-color: $govuk-primary-button-colour;
+    box-shadow: 0 $govuk-border-width-form-element 0 $govuk-primary-button-shadow-colour;
+
+    &,
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+        color: $govuk-primary-button-text-colour;
+    }
+
+    // alphagov/govuk_template includes a specific a:link:focus selector
+    // designed to make unvisited links a slightly darker blue when focussed, so
+    // we need to override the text colour for that combination of selectors so
+    // so that unvisited links styled as buttons do not end up with dark blue
+    // text when focussed.
+    @include govuk-compatibility(govuk_template) {
+        &:link:focus {
+            color: $govuk-primary-button-text-colour;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $govuk-primary-button-hover-colour;
+
+        &[disabled] {
+            background-color: $govuk-primary-button-colour;
+        }
+    }
+}
