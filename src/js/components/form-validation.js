@@ -20,7 +20,7 @@ FormValidation.prototype.bindUIEvents = function() {
             var isValid = true;
 
             // check for field validity
-            var $fields = $form.querySelectorAll('input,textarea,select');
+            var $fields = $form.querySelectorAll('input[type="text"],input[type="email"],textarea,select');
 
             common.nodeListForEach($fields, function($field) {
                 var $formFieldGroup = $field.closest('.' + formGroupClass);
