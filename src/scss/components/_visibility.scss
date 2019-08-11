@@ -1,0 +1,5 @@
+.app-hide-mobile {
+    @include govuk-media-query($until: tablet) {
+        display: none;
+    }
+}

@@ -1,0 +1,10 @@
+.govuk-body {
+    p {
+        margin-top: 0;
+        @include govuk-responsive-margin(4, 'bottom');
+
+        a {
+            @extend %govuk-link;
+        }
+    }
+}
