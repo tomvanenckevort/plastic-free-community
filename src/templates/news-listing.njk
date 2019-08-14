@@ -1,0 +1,82 @@
+{% extends "_layout.njk" %}
+{% set pageTitle = "News Listing" %}
+{% set app_pane_classes = "app-pane--enabled" %}
+
+{% block content %}
+    <div class="govuk-width-container app-pane__body">
+        <div class="app-pane__subnav app-hide-mobile">
+            {% include "components/_sub-navigation.njk" %}
+        </div>
+        <div class="app-pane__content">
+            <div class="govuk-main-wrapper">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-grid-column-two-thirds-from-desktop--l">
+                        <h1 class="govuk-heading-l govuk-!-font-weight-bold govuk-!-color-purple">News</h1>
+
+                        <article>
+                            <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                                <a href="#">Lorem Impsum Dolor Sit Amet</a>
+                            </h2>
+                            <div class="govuk-caption-m">
+                                <span class="govuk-visually-hidden">Posted on:
+                                </span>
+                                <time datetime="2019-08-12 08:30:00">12 August 2019</time>
+                            </div>
+                            <img src="https://via.placeholder.com/620x413" alt=""/>
+                            <p class="govuk-body">
+                                Nam ac justo interdum, hendrerit arcu at, cursus magna. Fusce quis massa metus. Integer nec augue ligula. Duis eleifend in odio sed pulvinar. Sed vel lacus justo. Nulla maximus tortor eget erat sollicitudin, nec cursus urna auctor. Donec odio nisi, mollis nec efficitur congue, condimentum volutpat magna. Pellentesque quis nisl a nisi porttitor vulputate non sit amet orci. Morbi a gravida ex. Ut mollis, magna eget interdum ultrices, magna mauris scelerisque sem, ac pretium arcu tortor eu massa.
+                            </p>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="#" class="govuk-link govuk-!-font-weight-bold">Read more</a>
+                            </p>
+                        </article>
+
+                        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                        <article>
+                            <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                                <a href="#">Lorem Impsum Dolor Sit Amet</a>
+                            </h2>
+                            <div class="govuk-caption-m">
+                                <span class="govuk-visually-hidden">Posted on:
+                                </span>
+                                <time datetime="2019-08-12 08:30:00">12 August 2019</time>
+                            </div>
+                            <img src="https://via.placeholder.com/620x413" alt=""/>
+                            <p class="govuk-body">
+                                Nam ac justo interdum, hendrerit arcu at, cursus magna. Fusce quis massa metus. Integer nec augue ligula. Duis eleifend in odio sed pulvinar. Sed vel lacus justo. Nulla maximus tortor eget erat sollicitudin, nec cursus urna auctor. Donec odio nisi, mollis nec efficitur congue, condimentum volutpat magna. Pellentesque quis nisl a nisi porttitor vulputate non sit amet orci. Morbi a gravida ex. Ut mollis, magna eget interdum ultrices, magna mauris scelerisque sem, ac pretium arcu tortor eu massa.
+                            </p>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="#" class="govuk-link govuk-!-font-weight-bold">Read more</a>
+                            </p>
+                        </article>
+
+                        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                        <article>
+                            <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                                <a href="#">Lorem Impsum Dolor Sit Amet</a>
+                            </h2>
+                            <div class="govuk-caption-m">
+                                <span class="govuk-visually-hidden">Posted on:
+                                </span>
+                                <time datetime="2019-08-12 08:30:00">12 August 2019</time>
+                            </div>
+                            <img src="https://via.placeholder.com/620x413" alt=""/>
+                            <p class="govuk-body">
+                                Nam ac justo interdum, hendrerit arcu at, cursus magna. Fusce quis massa metus. Integer nec augue ligula. Duis eleifend in odio sed pulvinar. Sed vel lacus justo. Nulla maximus tortor eget erat sollicitudin, nec cursus urna auctor. Donec odio nisi, mollis nec efficitur congue, condimentum volutpat magna. Pellentesque quis nisl a nisi porttitor vulputate non sit amet orci. Morbi a gravida ex. Ut mollis, magna eget interdum ultrices, magna mauris scelerisque sem, ac pretium arcu tortor eu massa.
+                            </p>
+                            <p class="govuk-body govuk-!-margin-bottom-0">
+                                <a href="#" class="govuk-link govuk-!-font-weight-bold">Read more</a>
+                            </p>
+                        </article>
+
+                        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                        {% include "components/_pagination.njk" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

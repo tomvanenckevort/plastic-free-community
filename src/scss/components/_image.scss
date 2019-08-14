@@ -1,0 +1,5 @@
+img {
+    display: inline-block;
+    max-width: 100%;
+    @include govuk-responsive-margin(3, 'bottom');
+}

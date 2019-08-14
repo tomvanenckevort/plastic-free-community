@@ -94,6 +94,7 @@ $govuk-font-family-nta: 'Roboto Condensed', Arial, sans-serif;
 @import 'components/navigation';
 @import 'components/mobile-navigation';
 @import 'components/sub-navigation';
+@import 'components/grid';
 @import 'components/masthead';
 @import 'components/site-search';
 @import 'components/social-feed';
@@ -101,5 +102,7 @@ $govuk-font-family-nta: 'Roboto Condensed', Arial, sans-serif;
 @import 'components/error-message';
 @import 'components/typography';
 @import 'components/visibility';
+@import 'components/image';
+@import 'components/pagination';
 
 @import 'overrides/typography';

@@ -1,0 +1,5 @@
+.govuk-grid-column-two-thirds-from-desktop--l {
+    @include govuk-media-query($and: '(min-width: 950px)') {
+        @include govuk-grid-column(two-thirds, $class: false);
+    }
+}

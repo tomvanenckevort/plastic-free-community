@@ -1,0 +1,30 @@
+.pagination {
+    padding: 0;
+    margin: 0;
+    @include govuk-responsive-margin(4, 'bottom');
+    text-align: center;
+
+    &__item {
+        display: inline-block;
+        list-style: none;
+    }
+
+    &__link {
+        @include govuk-responsive-padding(2);
+
+        &--current {
+            &:link {
+                color: govuk-colour('black');
+                pointer-events: none;
+                text-decoration: none;
+            }
+        }
+
+        &--disabled {
+            &:link {
+                color: govuk-colour('grey-2');
+                pointer-events: none;
+            }
+        }
+    }
+}

@@ -8,3 +8,19 @@
         }
     }
 }
+
+.govuk-heading-m {
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    + .govuk-caption-m {
+        @include govuk-responsive-margin(4, 'bottom');
+        margin-top: unquote('-' + govuk-spacing(3));
+
+        @include govuk-media-query($from: tablet) {
+            margin-top: unquote('-' + govuk-spacing(4));
+        }
+    }
+}
