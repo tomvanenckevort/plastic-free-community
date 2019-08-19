@@ -1,0 +1,104 @@
+{% extends "_layout.njk" %}
+{% set pageTitle = "News Listing" %}
+{% set app_pane_classes = "app-pane--enabled" %}
+
+{% block content %}
+    <div class="govuk-width-container app-pane__body">
+        <div class="app-pane__subnav app-hide-mobile">
+            {% include "components/_sub-navigation.njk" %}
+        </div>
+        <div class="app-pane__content">
+            <div class="govuk-main-wrapper">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full govuk-grid-column-two-thirds-from-desktop--l">
+                        <article>
+                            <h1 class="govuk-heading-l govuk-!-font-weight-bold govuk-!-color-purple">
+                                Lorem Impsum Dolor Sit Amet
+                            </h1>
+                            <div class="govuk-caption-m">
+                                <span class="govuk-visually-hidden">Posted on:
+                                </span>
+                                <time datetime="2019-08-12 08:30:00">12 August 2019</time>
+                            </div>
+                            <img src="https://via.placeholder.com/620x413" alt=""/>
+                            <div class="govuk-body">
+                                <p>Nam ac justo interdum, hendrerit arcu at, cursus magna. Fusce quis massa metus. Integer nec augue ligula. Duis eleifend in odio sed pulvinar. Sed vel lacus justo. Nulla maximus tortor eget erat sollicitudin, nec cursus urna auctor. Donec odio nisi, mollis nec efficitur congue, condimentum volutpat magna. Pellentesque quis nisl a nisi porttitor vulputate non sit amet orci. Morbi a gravida ex. Ut mollis, magna eget interdum ultrices, magna mauris scelerisque sem, ac pretium arcu tortor eu massa.</p>
+                                <p>Ut sem ante, sollicitudin nec tellus in, scelerisque molestie ligula. Morbi dapibus sodales quam id fringilla. Proin consequat leo diam, et molestie nisi ornare eget. Suspendisse dapibus elementum metus et aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ipsum augue, hendrerit id dapibus ac, interdum ac ipsum. Nullam vel ullamcorper magna, quis scelerisque mauris. Nunc auctor mi nec dui egestas aliquet. Duis eget est eget ex dictum condimentum sit amet ultricies risus. Mauris quis ex id arcu consectetur gravida non non turpis.</p>
+                                <p>Sed at dui eu massa tempus blandit. Mauris sit amet venenatis odio, a sagittis enim. Phasellus augue mi, lacinia vitae orci sit amet, posuere pellentesque dui. Phasellus nec risus justo. Cras dui ante, euismod eu egestas eu, dictum in lorem. Suspendisse mollis neque at orci suscipit volutpat. Morbi consectetur justo vitae iaculis feugiat. Proin dolor ligula, feugiat sed libero vel, lacinia efficitur nunc. Donec hendrerit purus tincidunt pretium molestie. Nam a magna pellentesque, venenatis ex quis, fringilla nulla. Proin at dolor in erat ultrices ullamcorper ornare ut enim. Morbi ligula neque, facilisis vel sodales id, interdum at purus. Donec vitae sapien non est fermentum egestas. Aenean tristique venenatis metus. Maecenas venenatis purus a lorem auctor, semper luctus quam eleifend. Quisque ac facilisis velit.</p>
+                            </div>
+                        </article>
+
+                        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                        <section>
+                            <h2 class="govuk-heading-m govuk-!-font-weight-bold">
+                                2 comments
+                            </h2>
+
+                            <ol class="comments">
+                                <li class="comments__item govuk-!-margin-bottom-6">
+                                    <div class="govuk-heading-s">
+                                        <span class="govuk-visually-hidden">Comment by</span>
+                                        John Smith
+                                        <span class="govuk-visually-hidden">posted</span><span class="govuk-caption-m">on 16 August 2019</span>
+                                    </div>
+                                    <div class="govuk-body">
+                                        <p>Nam ac justo interdum, hendrerit arcu at, cursus magna. Fusce quis massa metus. Integer nec augue ligula. Duis eleifend in odio sed pulvinar. Sed vel lacus justo. Nulla maximus tortor eget erat sollicitudin, nec cursus urna auctor. Donec odio nisi, mollis nec efficitur congue, condimentum volutpat magna.</p>
+                                    </div>
+                                </li>
+                                <li class="comments__item govuk-!-margin-bottom-6">
+                                    <div class="govuk-heading-s">
+                                        <span class="govuk-visually-hidden">Comment by</span>
+                                        Sharon Doe
+                                        <span class="govuk-visually-hidden">posted</span><span class="govuk-caption-m">on 1 July 2019</span>
+                                    </div>
+                                    <div class="govuk-body">
+                                        <p>Ut sem ante, sollicitudin nec tellus in, scelerisque molestie ligula. Morbi dapibus sodales quam id fringilla. Proin consequat leo diam, et molestie nisi ornare eget. Suspendisse dapibus elementum metus et aliquam.</p>
+                                    </div>
+                                </li>
+                            </ol>
+
+                            <h2 class="govuk-heading-m govuk-!-font-weight-bold">
+                                Leave a comment
+                            </h2>
+
+                            <form class="js-app-form-validation">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="name">
+                                        Name
+                                    </label>
+                                    <span id="name-hint" class="govuk-hint">
+                                        Required
+                                    </span>
+                                    <input class="govuk-input" id="name" name="name" type="text" aria-describedby="name-hint" required="required" data-value-missing="Enter your name">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="email">
+                                        Email
+                                    </label>
+                                    <span id="email-hint" class="govuk-hint">
+                                        Required
+                                    </span>
+                                    <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" required="required" data-value-missing="Enter your email address" data-type-mismatch="Enter a valid email address">
+                                </div>
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="comment">
+                                        Comment
+                                    </label>
+                                    <span id="comment-hint" class="govuk-hint">
+                                        Lorem ipsum dolor sit amet.
+                                    </span>
+                                    <textarea class="govuk-textarea" id="comment" name="comment" rows="5" aria-describedby="comment-hint" required="required" data-value-missing="Enter your comment"></textarea>
+                                </div>
+                                <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--primary" data-module="govuk-button">
+                                    Submit
+                                </button>
+                            </form>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
