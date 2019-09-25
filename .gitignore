@@ -471,6 +471,7 @@ MigrationBackup/
 # End of https://www.gitignore.io/api/node,umbraco,visualstudio
 
 # Don't include map tile files
-src/map/tiles/
+src/map/tiles/*
+!src/map/tiles/README.md
 dist/assets/map/tiles/
 PlasticFreeCommunity.Web/assets/map/tiles/
