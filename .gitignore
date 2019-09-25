@@ -469,3 +469,8 @@ MigrationBackup/
 **/App_Data/Models/ood.flag
 
 # End of https://www.gitignore.io/api/node,umbraco,visualstudio
+
+# Don't include map tile files
+src/map/tiles/
+dist/assets/map/tiles/
+PlasticFreeCommunity.Web/assets/map/tiles/

@@ -15,7 +15,25 @@ const express = require('express');
 const directory = require('serve-index');
 
 function clean() {
-    return del(['dist/**/*', 'PlasticFreeCommunity.Web/assets/**/*'], { force: true });
+    return del(
+        [
+            'dist/**/*',
+            '!dist/assets',
+            'dist/assets/**',
+            '!dist/assets/map',
+            'dist/assets/map/**',
+            '!dist/assets/map/tiles',
+            '!dist/assets/map/tiles/**/*',
+            'PlasticFreeCommunity.Web/assets/**/*',
+            '!PlasticFreeCommunity.Web/assets/map',
+            'PlasticFreeCommunity.Web/assets/map/**',
+            '!PlasticFreeCommunity.Web/assets/map/tiles',
+            '!PlasticFreeCommunity.Web/assets/map/tiles/**/*'
+        ],
+        {
+            force: true
+        }
+    );
 }
 
 function html() {
@@ -58,7 +76,7 @@ function js() {
                         babel({
                             presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: '3' }]],
                             minified: true,
-                            exclude: [/\/core-js\//]
+                            exclude: [/\/core-js\/|\/mapbox-gl\//]
                         })
                     ],
                     external: []
@@ -74,7 +92,7 @@ function js() {
 }
 
 function assets() {
-    return merge(src('src/images/**/*').pipe(dest('dist/assets/images')), src('src/fonts/**/*').pipe(dest('dist/assets/fonts')));
+    return merge(src('src/images/**/*').pipe(dest('dist/assets/images')), src('src/fonts/**/*').pipe(dest('dist/assets/fonts')), src('src/map/**/*').pipe(dest('dist/assets/map')));
 }
 
 function watching() {
@@ -82,7 +100,7 @@ function watching() {
 }
 
 function copy() {
-    return src('dist/assets/**/*').pipe(dest('PlasticFreeCommunity.Web/assets'));
+    return src(['dist/assets/**/*', '!dist/assets/map/']).pipe(dest('PlasticFreeCommunity.Web/assets'));
 }
 
 function server(cb) {

@@ -1,0 +1,80 @@
+{% extends "_layout.njk" %}
+{% set pageTitle = "Directory" %}
+
+{% block content %}
+    {% set masthead_title = "Directory" %}
+    {% set masthead_description = "Find out which local businesses in your town can help you to go plastic-free." %}
+    {% include "components/_masthead.njk" %}
+
+    <div id="map" class="map__container js-app-directory-map"></div>
+
+    <div class="govuk-width-container app-site-width-container">
+        <div class="govuk-main-wrapper">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <article id="john-smith" class="js-app-directory-map-marker" data-display-name="John Smith" data-lat="53.14384" data-lng="-2.36265">
+                        <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                            John Smith
+                        </h2>
+                        <div class="govuk-caption-m">
+                            <span class="govuk-visually-hidden">Category:
+                            </span>
+                            Butcher -
+                            <span class="govuk-visually-hidden">Located on:
+                            </span>
+                            <address>2 High Street</address>
+                        </div>
+                        <p class="govuk-body">
+                            Lorem ipsum dolor sit amet
+                        </p>
+                        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 js-app-directory-view-map" data-module="govuk-button">View on Map</button>
+                    </article>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                    <article id="dough-co" class="js-app-directory-map-marker" data-display-name="Dough & Co" data-lat="53.14444" data-lng="-2.36560">
+                        <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                            Dough & Co
+                        </h2>
+                        <div class="govuk-caption-m">
+                            <span class="govuk-visually-hidden">Category:
+                            </span>
+                            Bakery -
+                            <span class="govuk-visually-hidden">Located on:
+                            </span>
+                            <address>14 Town Road</address>
+                        </div>
+                        <p class="govuk-body">
+                            Lorem ipsum dolor sit amet
+                        </p>
+                        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 js-app-directory-view-map" data-module="govuk-button">View on Map</button>
+                    </article>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l">
+
+                    <article id="three-apples" class="js-app-directory-map-marker" data-display-name="Three Apples" data-lat="53.14547" data-lng="-2.36217">
+                        <h2 class="govuk-heading-m govuk-!-font-weight-bold govuk-!-color-purple">
+                            Three Apples
+                        </h2>
+                        <div class="govuk-caption-m">
+                            <span class="govuk-visually-hidden">Category:
+                            </span>
+                            Greengrocer -
+                            <span class="govuk-visually-hidden">Located on:
+                            </span>
+                            <address>34 Market Square</address>
+                        </div>
+                        <p class="govuk-body">
+                            Lorem ipsum dolor sit amet
+                        </p>
+                        <button type="button" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0 js-app-directory-view-map" data-module="govuk-button">View on Map</button>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extraScripts %}
+    <script src="/assets/js/map.js"></script>
+{% endblock %}

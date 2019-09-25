@@ -19,7 +19,9 @@
     "dependencies": {
         "govuk-frontend": "^2.13.0",
         "instafeed.es6": "^1.1.1",
-        "lunr": "^2.3.6"
+        "lunr": "^2.3.6",
+        "mapbox-gl": "^1.3.1",
+        "smoothscroll-polyfill": "^0.4.4"
     },
     "devDependencies": {
         "@babel/core": "^7.5.5",

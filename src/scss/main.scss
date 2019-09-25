@@ -88,6 +88,8 @@ $govuk-font-family-nta: 'Roboto Condensed', Arial, sans-serif;
 @import 'govuk-frontend/overrides/typography';
 @import 'govuk-frontend/overrides/width';
 
+@import 'mapbox-gl/dist/mapbox-gl';
+
 @import 'components/header';
 @import 'components/footer';
 @import 'components/pane';
@@ -105,5 +107,6 @@ $govuk-font-family-nta: 'Roboto Condensed', Arial, sans-serif;
 @import 'components/image';
 @import 'components/pagination';
 @import 'components/comments';
+@import 'components/map';
 
 @import 'overrides/typography';
