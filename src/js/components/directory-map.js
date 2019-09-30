@@ -1732,6 +1732,10 @@ DirectoryMap.prototype.initMap = function() {
     let map = this.map;
 
     common.nodeListForEach(this.$markers, function($marker) {
+        if (!$marker.dataset.lng || !$marker.dataset.lat) {
+            return;
+        }
+
         let $el = document.createElement('div');
         $el.className = 'map__marker';
 
@@ -1810,6 +1814,10 @@ DirectoryMap.prototype.init = function() {
     var featuresNeeded = 'querySelector' in document && 'addEventListener' in window;
 
     if (!featuresNeeded) {
+        return;
+    }
+
+    if (!this.$map) {
         return;
     }
 
