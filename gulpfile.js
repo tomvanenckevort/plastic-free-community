@@ -9,7 +9,7 @@ const rollup = require('gulp-better-rollup');
 const babel = require('rollup-plugin-babel');
 const resolve = require('rollup-plugin-node-resolve');
 const commonjs = require('rollup-plugin-commonjs');
-const uglify = require('gulp-uglify');
+const terser = require('rollup-plugin-terser');
 const merge = require('merge-stream');
 const express = require('express');
 const directory = require('serve-index');
@@ -75,9 +75,10 @@ function js() {
                         commonjs(),
                         babel({
                             presets: [['@babel/preset-env', { useBuiltIns: 'usage', corejs: '3' }]],
-                            minified: true,
+                            minified: false,
                             exclude: [/\/core-js\/|\/mapbox-gl\//]
-                        })
+                        }),
+                        terser.terser()
                     ],
                     external: []
                 },
@@ -87,7 +88,6 @@ function js() {
                 }
             )
         )
-        .pipe(uglify())
         .pipe(dest('dist/assets/js', { sourcemaps: '.' }));
 }
 
