@@ -19,9 +19,9 @@ DirectoryMap.prototype.initMap = function() {
 
     this.map = new mapboxgl.Map({
         container: this.$map,
-        center: bounds.getCenter(),
+        center: new mapboxgl.LngLat(this.$map.dataset.lng, this.$map.dataset.lat),
         maxBounds: bounds,
-        zoom: 8,
+        zoom: this.$map.dataset.zoom,
         minZoom: 8,
         maxZoom: 18,
         attributionControl: true,
@@ -86,7 +86,10 @@ DirectoryMap.prototype.initMap = function() {
                     paint: {
                         'fill-color': {
                             base: 1,
-                            stops: [[9, 'hsla(0, 3%, 85%, 0.84)'], [12, 'hsla(35, 57%, 88%, 0.49)']]
+                            stops: [
+                                [9, 'hsla(0, 3%, 85%, 0.84)'],
+                                [12, 'hsla(35, 57%, 88%, 0.49)']
+                            ]
                         }
                     }
                 },
@@ -166,7 +169,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#a0c8f0',
                         'line-width': {
                             base: 1.2,
-                            stops: [[11, 0.5], [20, 6]]
+                            stops: [
+                                [11, 0.5],
+                                [20, 6]
+                            ]
                         }
                     }
                 },
@@ -184,7 +190,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#a0c8f0',
                         'line-width': {
                             base: 1.3,
-                            stops: [[13, 0.5], [20, 6]]
+                            stops: [
+                                [13, 0.5],
+                                [20, 6]
+                            ]
                         }
                     }
                 },
@@ -234,7 +243,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#f0ede9',
                         'line-width': {
                             base: 1.2,
-                            stops: [[11, 3], [20, 16]]
+                            stops: [
+                                [11, 3],
+                                [20, 16]
+                            ]
                         }
                     }
                 },
@@ -250,7 +262,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#f0ede9',
                         'line-width': {
                             base: 1.2,
-                            stops: [[11, 0.5], [20, 6]]
+                            stops: [
+                                [11, 0.5],
+                                [20, 6]
+                            ]
                         }
                     }
                 },
@@ -271,7 +286,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -290,7 +310,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.5, 0.25],
                         'line-width': {
                             base: 1.2,
-                            stops: [[15, 1], [16, 4], [20, 11]]
+                            stops: [
+                                [15, 1],
+                                [16, 4],
+                                [20, 11]
+                            ]
                         }
                     }
                 },
@@ -309,7 +333,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -326,11 +355,19 @@ DirectoryMap.prototype.initMap = function() {
                     paint: {
                         'line-color': '#cfcdca',
                         'line-opacity': {
-                            stops: [[12, 0], [12.5, 1]]
+                            stops: [
+                                [12, 0],
+                                [12.5, 1]
+                            ]
                         },
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 0.5], [13, 1], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 0.5],
+                                [13, 1],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -349,7 +386,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[8, 1.5], [20, 17]]
+                            stops: [
+                                [8, 1.5],
+                                [20, 17]
+                            ]
                         }
                     }
                 },
@@ -367,7 +407,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#e9ac77',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -387,7 +432,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.5, 0.25],
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -403,7 +453,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [1, 0.75],
                         'line-width': {
                             base: 1.2,
-                            stops: [[14, 0.5], [20, 10]]
+                            stops: [
+                                [14, 0.5],
+                                [20, 10]
+                            ]
                         }
                     }
                 },
@@ -422,7 +475,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fc8',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -440,7 +498,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff',
                         'line-width': {
                             base: 1.2,
-                            stops: [[15.5, 0], [16, 2], [20, 7.5]]
+                            stops: [
+                                [15.5, 0],
+                                [16, 2],
+                                [20, 7.5]
+                            ]
                         }
                     }
                 },
@@ -458,7 +520,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff4c6',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -477,7 +544,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[13.5, 0], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [13.5, 0],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -495,7 +566,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff4c6',
                         'line-width': {
                             base: 1.2,
-                            stops: [[6.5, 0], [7, 0.5], [20, 10]]
+                            stops: [
+                                [6.5, 0],
+                                [7, 0.5],
+                                [20, 10]
+                            ]
                         }
                     }
                 },
@@ -513,7 +588,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff4c6',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -532,7 +611,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#ffdaa6',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -547,7 +630,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -563,7 +650,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -578,7 +669,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -594,7 +689,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -631,7 +730,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -650,7 +754,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#cfcdca',
                         'line-width': {
                             base: 1.2,
-                            stops: [[15, 1], [16, 4], [20, 11]]
+                            stops: [
+                                [15, 1],
+                                [16, 4],
+                                [20, 11]
+                            ]
                         }
                     }
                 },
@@ -672,7 +780,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -690,11 +803,19 @@ DirectoryMap.prototype.initMap = function() {
                     paint: {
                         'line-color': '#cfcdca',
                         'line-opacity': {
-                            stops: [[12, 0], [12.5, 1]]
+                            stops: [
+                                [12, 0],
+                                [12.5, 1]
+                            ]
                         },
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 0.5], [13, 1], [14, 4], [20, 20]]
+                            stops: [
+                                [12, 0.5],
+                                [13, 1],
+                                [14, 4],
+                                [20, 20]
+                            ]
                         }
                     }
                 },
@@ -715,7 +836,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[8, 1.5], [20, 17]]
+                            stops: [
+                                [8, 1.5],
+                                [20, 17]
+                            ]
                         }
                     }
                 },
@@ -736,7 +860,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -757,7 +886,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#e9ac77',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -777,7 +911,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [1, 0.7],
                         'line-width': {
                             base: 1.2,
-                            stops: [[14, 1], [20, 10]]
+                            stops: [
+                                [14, 1],
+                                [20, 10]
+                            ]
                         }
                     }
                 },
@@ -797,7 +934,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fc8',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -816,7 +958,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff',
                         'line-width': {
                             base: 1.2,
-                            stops: [[15.5, 0], [16, 2], [20, 7.5]]
+                            stops: [
+                                [15.5, 0],
+                                [16, 2],
+                                [20, 7.5]
+                            ]
                         }
                     }
                 },
@@ -837,7 +983,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -857,7 +1008,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[6.5, 0], [8, 0.5], [20, 13]]
+                            stops: [
+                                [6.5, 0],
+                                [8, 0.5],
+                                [20, 13]
+                            ]
                         }
                     }
                 },
@@ -877,7 +1032,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -897,11 +1056,18 @@ DirectoryMap.prototype.initMap = function() {
                     paint: {
                         'line-color': {
                             base: 1,
-                            stops: [[5, 'hsl(26, 87%, 62%)'], [6, '#fc8']]
+                            stops: [
+                                [5, 'hsl(26, 87%, 62%)'],
+                                [6, '#fc8']
+                            ]
                         },
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -916,7 +1082,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -932,7 +1102,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -947,7 +1121,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -963,7 +1141,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -983,7 +1165,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[13.5, 0], [14, 2.5], [20, 18]]
+                            stops: [
+                                [13.5, 0],
+                                [14, 2.5],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -1002,7 +1188,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -1020,7 +1211,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#cfcdca',
                         'line-width': {
                             base: 1.2,
-                            stops: [[15, 1], [16, 4], [20, 11]]
+                            stops: [
+                                [15, 1],
+                                [16, 4],
+                                [20, 11]
+                            ]
                         }
                     }
                 },
@@ -1039,7 +1234,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 1], [13, 3], [14, 4], [20, 15]]
+                            stops: [
+                                [12, 1],
+                                [13, 3],
+                                [14, 4],
+                                [20, 15]
+                            ]
                         }
                     }
                 },
@@ -1056,11 +1256,19 @@ DirectoryMap.prototype.initMap = function() {
                     paint: {
                         'line-color': 'hsl(36, 6%, 74%)',
                         'line-opacity': {
-                            stops: [[12, 0], [12.5, 1]]
+                            stops: [
+                                [12, 0],
+                                [12.5, 1]
+                            ]
                         },
                         'line-width': {
                             base: 1.2,
-                            stops: [[12, 0.5], [13, 1], [14, 4], [20, 25]]
+                            stops: [
+                                [12, 0.5],
+                                [13, 1],
+                                [14, 4],
+                                [20, 25]
+                            ]
                         }
                     }
                 },
@@ -1080,7 +1288,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [1, 0],
                         'line-width': {
                             base: 1.2,
-                            stops: [[14, 1.5], [20, 18]]
+                            stops: [
+                                [14, 1.5],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -1099,7 +1310,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[8, 1.5], [20, 17]]
+                            stops: [
+                                [8, 1.5],
+                                [20, 17]
+                            ]
                         }
                     }
                 },
@@ -1117,7 +1331,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#e9ac77',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -1135,7 +1354,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#e9ac77',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0.4], [6, 0.7], [7, 1.75], [20, 22]]
+                            stops: [
+                                [5, 0.4],
+                                [6, 0.7],
+                                [7, 1.75],
+                                [20, 22]
+                            ]
                         }
                     }
                 },
@@ -1151,7 +1375,10 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [1, 0.3],
                         'line-width': {
                             base: 1.2,
-                            stops: [[14, 0.5], [20, 10]]
+                            stops: [
+                                [14, 0.5],
+                                [20, 10]
+                            ]
                         }
                     }
                 },
@@ -1169,7 +1396,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fc8',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -1187,7 +1419,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fff',
                         'line-width': {
                             base: 1.2,
-                            stops: [[15.5, 0], [16, 2], [20, 7.5]]
+                            stops: [
+                                [15.5, 0],
+                                [16, 2],
+                                [20, 7.5]
+                            ]
                         }
                     }
                 },
@@ -1205,7 +1441,12 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+                            stops: [
+                                [12.5, 0],
+                                [13, 1.5],
+                                [14, 2.5],
+                                [20, 11.5]
+                            ]
                         }
                     }
                 },
@@ -1224,7 +1465,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-opacity': 1,
                         'line-width': {
                             base: 1.2,
-                            stops: [[13.5, 0], [14, 2.5], [20, 18]]
+                            stops: [
+                                [13.5, 0],
+                                [14, 2.5],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -1242,7 +1487,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[6.5, 0], [7, 0.5], [20, 10]]
+                            stops: [
+                                [6.5, 0],
+                                [7, 0.5],
+                                [20, 10]
+                            ]
                         }
                     }
                 },
@@ -1260,7 +1509,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fea',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -1278,7 +1531,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#fc8',
                         'line-width': {
                             base: 1.2,
-                            stops: [[5, 0], [7, 1], [20, 18]]
+                            stops: [
+                                [5, 0],
+                                [7, 1],
+                                [20, 18]
+                            ]
                         }
                     }
                 },
@@ -1293,7 +1550,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -1309,7 +1570,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -1324,7 +1589,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': '#bbb',
                         'line-width': {
                             base: 1.4,
-                            stops: [[14, 0.4], [15, 0.75], [20, 2]]
+                            stops: [
+                                [14, 0.4],
+                                [15, 0.75],
+                                [20, 2]
+                            ]
                         }
                     }
                 },
@@ -1340,7 +1609,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [0.2, 8],
                         'line-width': {
                             base: 1.4,
-                            stops: [[14.5, 0], [15, 3], [20, 8]]
+                            stops: [
+                                [14.5, 0],
+                                [15, 3],
+                                [20, 8]
+                            ]
                         }
                     }
                 },
@@ -1359,7 +1632,11 @@ DirectoryMap.prototype.initMap = function() {
                         'line-dasharray': [5, 1],
                         'line-width': {
                             base: 1,
-                            stops: [[4, 0.4], [5, 1], [12, 1.8]]
+                            stops: [
+                                [4, 0.4],
+                                [5, 1],
+                                [12, 1.8]
+                            ]
                         }
                     }
                 },
@@ -1378,11 +1655,18 @@ DirectoryMap.prototype.initMap = function() {
                         'line-color': 'hsl(248, 1%, 41%)',
                         'line-opacity': {
                             base: 1,
-                            stops: [[0, 0.4], [4, 1]]
+                            stops: [
+                                [0, 0.4],
+                                [4, 1]
+                            ]
                         },
                         'line-width': {
                             base: 1,
-                            stops: [[3, 1], [5, 1.2], [12, 3]]
+                            stops: [
+                                [3, 1],
+                                [5, 1.2],
+                                [12, 3]
+                            ]
                         }
                     }
                 },
@@ -1442,7 +1726,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-offset': [0, 0.15],
                         'text-size': {
                             base: 1,
-                            stops: [[13, 12], [14, 13]]
+                            stops: [
+                                [13, 12],
+                                [14, 13]
+                            ]
                         }
                     },
                     paint: {
@@ -1464,7 +1751,10 @@ DirectoryMap.prototype.initMap = function() {
                         'icon-rotation-alignment': 'viewport',
                         'symbol-placement': {
                             base: 1,
-                            stops: [[10, 'point'], [11, 'line']]
+                            stops: [
+                                [10, 'point'],
+                                [11, 'line']
+                            ]
                         },
                         'symbol-spacing': 500,
                         'text-field': '{ref}',
@@ -1490,7 +1780,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-max-width': 9,
                         'text-size': {
                             base: 1.2,
-                            stops: [[12, 10], [15, 14]]
+                            stops: [
+                                [12, 10],
+                                [15, 14]
+                            ]
                         },
                         'text-transform': 'uppercase'
                     },
@@ -1513,7 +1806,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-max-width': 8,
                         'text-size': {
                             base: 1.2,
-                            stops: [[10, 12], [15, 22]]
+                            stops: [
+                                [10, 12],
+                                [15, 22]
+                            ]
                         }
                     },
                     paint: {
@@ -1532,7 +1828,10 @@ DirectoryMap.prototype.initMap = function() {
                     layout: {
                         'icon-image': {
                             base: 1,
-                            stops: [[0, 'dot_9'], [8, '']]
+                            stops: [
+                                [0, 'dot_9'],
+                                [8, '']
+                            ]
                         },
                         'text-anchor': 'bottom',
                         'text-field': '{name_en}',
@@ -1541,7 +1840,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-offset': [0, 0],
                         'text-size': {
                             base: 1.2,
-                            stops: [[7, 12], [11, 16]]
+                            stops: [
+                                [7, 12],
+                                [11, 16]
+                            ]
                         }
                     },
                     paint: {
@@ -1561,7 +1863,10 @@ DirectoryMap.prototype.initMap = function() {
                     layout: {
                         'icon-image': {
                             base: 1,
-                            stops: [[0, 'dot_9'], [8, '']]
+                            stops: [
+                                [0, 'dot_9'],
+                                [8, '']
+                            ]
                         },
                         'text-anchor': 'bottom',
                         'text-field': '{name_en}',
@@ -1570,7 +1875,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-offset': [0, 0],
                         'text-size': {
                             base: 1.2,
-                            stops: [[7, 14], [11, 24]]
+                            stops: [
+                                [7, 14],
+                                [11, 24]
+                            ]
                         },
                         'icon-allow-overlap': true,
                         'icon-optional': false
@@ -1593,7 +1901,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-field': '{name_en}',
                         'text-font': ['Roboto Condensed Italic'],
                         'text-size': {
-                            stops: [[4, 11], [6, 15]]
+                            stops: [
+                                [4, 11],
+                                [6, 15]
+                            ]
                         },
                         'text-transform': 'uppercase',
                         visibility: 'visible'
@@ -1616,7 +1927,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-font': ['Roboto Condensed Italic'],
                         'text-max-width': 6.25,
                         'text-size': {
-                            stops: [[3, 11], [7, 17]]
+                            stops: [
+                                [3, 11],
+                                [7, 17]
+                            ]
                         },
                         'text-transform': 'none'
                     },
@@ -1639,7 +1953,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-font': ['Roboto Condensed Italic'],
                         'text-max-width': 6.25,
                         'text-size': {
-                            stops: [[2, 11], [5, 17]]
+                            stops: [
+                                [2, 11],
+                                [5, 17]
+                            ]
                         },
                         'text-transform': 'none'
                     },
@@ -1662,7 +1979,10 @@ DirectoryMap.prototype.initMap = function() {
                         'text-font': ['Roboto Condensed Italic'],
                         'text-max-width': 6.25,
                         'text-size': {
-                            stops: [[1, 11], [4, 17]]
+                            stops: [
+                                [1, 11],
+                                [4, 17]
+                            ]
                         },
                         'text-transform': 'none'
                     },
@@ -1727,7 +2047,6 @@ DirectoryMap.prototype.initMap = function() {
 
     // add markers
     let markers = this.markers;
-    let markerBounds = new mapboxgl.LngLatBounds();
 
     let map = this.map;
 
@@ -1758,10 +2077,7 @@ DirectoryMap.prototype.initMap = function() {
         marker.addTo(map);
 
         markers.push(marker);
-        markerBounds = markerBounds.extend(marker.getLngLat());
     });
-
-    this.map.fitBounds(markerBounds, { padding: 75 });
 };
 
 DirectoryMap.prototype.initMarkerClicks = function() {
